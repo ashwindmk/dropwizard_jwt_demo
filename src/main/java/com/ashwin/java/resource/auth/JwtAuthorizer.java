@@ -8,7 +8,6 @@ import javax.ws.rs.container.ContainerRequestContext;
 public class JwtAuthorizer implements Authorizer<UserPrincipal> {
     @Override
     public boolean authorize(UserPrincipal principal, String role) {
-        System.out.println("Authorize ...");
         return principal.getRoles() != null && principal.getRoles().contains(role);
     }
 
